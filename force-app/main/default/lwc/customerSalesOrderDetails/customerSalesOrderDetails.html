@@ -1,0 +1,12 @@
+<template>
+    <lightning-card title="Create Customer Sales Order">
+        <lightning-input label="Phone" name="PHONE" type="phone" value={phone} onchange={handleChange}></lightning-input>
+         <lightning-input label="Email" name="EMAIL" type="email" value={email} onchange={handleChange}></lightning-input>
+       <div class={dynamicClass}>{message}</b></div>
+         <lightning-button label="Submit" variant="brand" onclick={getCustomerData}></lightning-button>
+        </lightning-card>
+        <template if:true={customerData}>
+          <c-customer-sales-order-details-view customer-data={customerData}></c-customer-sales-order-details-view>
+         </template>
+    
+</template>

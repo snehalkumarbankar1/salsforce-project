@@ -1,0 +1,22 @@
+<template>
+    <lightning-card class="slds-card " title="one way binding">
+    {name}
+    {currentTime}
+    {subscriber}
+</lightning-card>
+
+    <lightning-card class="slds-card " title="two way binding">
+          <lightning-input class="slds-p-around_small" value={memberStatus} onchange={updatememberStatus} type="text" label="Enter value">
+          </lightning-input>
+         <p class="slds-p-around_small "> value typed is:{memberStatus}</p>
+        </lightning-card>
+        <lightning-card class="slds-card " title="getter and setter">
+          <p class="slds-p-around_small">{minutesWatched}</p>
+
+          <lightning-input type="number" label="Enter number" onchange={handleWatchChange}></lightning-input>
+          <p class="slds-p-around_small">
+            after setter is called:{minutesWatched}
+          </p>
+         </lightning-card>
+
+</template>

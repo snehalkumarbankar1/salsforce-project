@@ -1,0 +1,22 @@
+<template>
+    
+        <lightning-card  title="My task list for today">
+           
+            <p class="slds-p-horizontal_small">
+           <template for:each={taskList} for:item="task">
+             <div key={task.id}>
+                {task.name}
+             </div> 
+           </template>
+
+           <template iterator:task={taskList}>
+             <div key={task.value.id}>
+                {task.value.name}
+             </div> 
+           </template>
+            
+        </p>
+            <p slot="footer">all the best</p>
+        </lightning-card>
+
+</template>

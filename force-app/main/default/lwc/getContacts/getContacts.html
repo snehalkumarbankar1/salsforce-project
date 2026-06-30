@@ -1,0 +1,20 @@
+<template>
+    <lightning-card  class="slds-p-around_medium" title="Customer data">
+       <template if:true={data}>
+        <template for:each={data} for:item="rec">
+           <p key={rec.Id}> 
+         {rec.FirstName} - {rec.LastName} 
+         {rec.Email} - {rec.Phone}
+         </p>
+        </template>
+       </template>
+
+       <template if:false={data}>
+    <p>No records found</p>
+</template>
+
+    <lightning-input type="text" label="Enter PhoneNumber or email" value={phoneOrEmail}  onchange={handleChange} ></lightning-input>
+   
+    <lightning-button label="View Record" variant="brand" onclick={handleClick} ></lightning-button>
+    </lightning-card>
+</template>

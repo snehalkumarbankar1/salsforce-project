@@ -1,0 +1,24 @@
+<template>
+    <lightning-card title="Imperative Subject task search">
+    <lightning-input class="slds-m-left_small" value={subject} onchange={handleSubjectChange} type="text" label="Enter your Subject" required></lightning-input>
+ <lightning-button class="slds-m-left_small" label="Search" variant="brand" onclick={searchTasks}></lightning-button>
+<template if:true={showTask}>
+    <table class="slds-m-left_small">
+        <tr>
+            <th>Id</th>
+             <th>Status</th>
+              <th>Subject</th>
+               <th>Description</th>
+            </tr>
+            <template for:each={taskList} for:item="task">
+         <tr key={task.Id}>
+                <td>{task.Id}></td>
+                 <td>{task.Status}</td>
+                  <td>{task.Subject}</td>
+                   <td>{task.Description}</td>
+                </tr>
+              </template>
+    </table>
+</template>
+</lightning-card>
+</template>

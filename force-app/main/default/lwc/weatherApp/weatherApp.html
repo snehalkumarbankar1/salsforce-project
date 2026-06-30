@@ -1,0 +1,44 @@
+<template>
+
+    <lightning-card title="Weather Information">
+
+        <div class="slds-p-around_medium">
+
+            <lightning-input
+                label="Enter City Name"
+                value={cityName}
+                onchange={handleChange}>
+            </lightning-input>
+
+            <br/>
+
+            <lightning-button
+                label="Get Weather"
+                variant="brand"
+                onclick={getWeatherData}>
+            </lightning-button>
+                  
+            <template if:true={city}>
+                <div class="slds-m-top_medium">
+             weather information-
+                    <p>
+                        <b>City:</b> {city}
+                    </p>
+
+                    <p>
+                        <b>Temperature:</b>
+                       {temperature} °C
+                    </p>
+
+                    <p>
+                        <b>Humidity:</b>
+                        {humidity} %
+                    </p>
+
+                </div>
+           </template>
+        </div>
+
+    </lightning-card>
+
+</template>

@@ -1,0 +1,30 @@
+<template>
+    <lightning-card title="create record with custom layout">
+        <lightning-record-edit-form object-api-name={objectApiName}>
+            
+            <lightning-messages></lightning-messages>
+     <div class="slds-grid slds-wrap slds-p-around_small">
+            <div class="slds-col slds-size_1-of-2">
+          <lightning-input-field field-name="Subject"></lightning-input-field> 
+          </div>
+          <div class="slds-col slds-size_1-of-2"> 
+          <lightning-input-field field-name="Reason"></lightning-input-field>  
+          </div>
+          <div class="slds-col slds-size_1-of-2">
+          <lightning-input-field field-name="Status"></lightning-input-field> 
+          </div> 
+          <div class="slds-col slds-size_1-of-2">
+          <lightning-input-field field-name="Origin"></lightning-input-field> 
+          </div>  
+          <div class="slds-col slds-size_2-of-2">
+          <lightning-input-field field-name="Description"></lightning-input-field> 
+          </div>   
+          <div class="slds-p-around_small">  
+          <lightning-button class="slds-m-right_small" type="submit" variant="brand" label="Create"></lightning-button>
+          <lightning-button type="reset" label="reset"></lightning-button>
+          </div>
+        </div>
+        </lightning-record-edit-form>
+
+    </lightning-card> 
+</template>

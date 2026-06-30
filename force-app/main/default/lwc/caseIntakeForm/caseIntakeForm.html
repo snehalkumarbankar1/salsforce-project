@@ -1,0 +1,46 @@
+<template>
+    <lightning-card title="Case Client Controller">
+    <div class="slds-p-around_medium">
+     <lightning-record-edit-form object-api-name="Case"
+                                 onsubmit={handleSubmit}
+                                 onsuccess={handleSuccess}
+                                 onerror={handleError}>
+
+        <lightning-input-field field-name="Subject">
+       </lightning-input-field>
+
+        <lightning-record-picker label="Client(Lookup)"
+                                 lwc:ref="recordPicker"
+                                 placeholder="Search Client..." 
+                                 object-api-name="Client__c"
+                                 display-field="Name"
+                                 value={caseRecord.Client__c}
+                                 onchange={handleClientSelected} required>
+        </lightning-record-picker>
+
+          <lightning-input label="Client Email"
+                           type="email"
+                           value={caseRecord.Client_Email__c} readonly>
+         </lightning-input>    
+          <lightning-input label="Client Phone"
+                           type="tel"
+                           value={caseRecord.Client_Phone__c} readonly >
+        </lightning-input>  
+          <lightning-input label="Client Address"
+                           type="text"
+                           value={caseRecord.Client_Address__c} readonly >
+         </lightning-input>                 
+          <lightning-input-field field-name="Client__c"
+                                 value={caseRecord.Client__c}
+                                 class="slds-hide">
+         </lightning-input-field>
+
+         <lightning-button class="slds-m-top_medium"
+                           type="submit"
+                            label="Save Case"
+                            variant="brand"></lightning-button>
+
+     </lightning-record-edit-form>
+    </div>
+    </lightning-card>
+</template>

@@ -1,0 +1,13 @@
+<template>
+    
+    <lightning-card title="Related task of this account Record">
+        <template if:true={taskFound}>
+   <template for:each={taskList} for:item="task">
+      <div key={task.Id}>
+        {task.Subject}-{task.ActivityDate}-{task.Description}
+      </div>
+   </template>
+  </template>
+    </lightning-card>
+    
+</template>

@@ -1,0 +1,15 @@
+<template>
+    <div class="banner" style={bannerStyle}>
+        <h1>{title}</h1>
+
+        <p>{message}</p>
+
+        <template if:true={showButton}>
+            <lightning-button
+                label="Contact Support"
+                variant="brand"
+                onclick={handleClick}>
+            </lightning-button>
+        </template>
+    </div>
+</template>

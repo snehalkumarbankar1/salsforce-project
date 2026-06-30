@@ -1,0 +1,27 @@
+<template>
+    <lightning-card title="Import utility">
+        te current logged user: {userId}
+        <br/>
+        does he have permission:{hasPermission}
+        <br/>
+       form factor for device is : {deviceInfo}
+       <br/>
+       LANG INFORMATION : {lang}
+       <br/>
+       Locale INFORMATION : {locale}
+       <br/>
+       Currency INFORMATION : {currency}
+       <br/>
+       Timezone INFORMATION : {timeZone}
+       <br/>
+        <template if:true={showInProd}>
+           this is production org
+           </template>
+           <template if:false={showInProd}>
+          this is sandbox
+           </template>
+           <br/>
+            <img src={src}>
+        <br/>
+    </lightning-card>
+</template>

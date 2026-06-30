@@ -1,0 +1,14 @@
+<template>
+    <lightning-card class="slds-p-around_small" title="Case Records">
+       <template for:each={caseList} for:item="cases">
+        <div key={cases.Id}>
+            <p class="slds-m-left_small"><b>Case Number:{cases.CaseNumber}</b></p>
+           <p class="slds-m-left_small"> Status:{cases.Status},  Origin:{cases.Origin},  Subject: {cases.Subject}</p>
+            </div>
+       </template>
+       <template if:true={errorMessage}>
+            error Loading cases:{errorMessage}
+       </template>
+
+    </lightning-card>
+</template>

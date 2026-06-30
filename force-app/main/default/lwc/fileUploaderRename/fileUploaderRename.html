@@ -1,0 +1,23 @@
+<template>
+    <lightning-card class="slds-p-around_medium" title="File Uploader">
+    <template if:true={isLoading}>
+     <lightning-spinner size="medium"></lightning-spinner>
+    </template>
+  <lightning-input type="file" label="Choose File" onchange={handleFileChange}></lightning-input>
+   
+   <template if:true={fileSelected}>
+    <p class="slds-m-top_small">Original File : <strong>{originalFileName}</strong></p>
+     <p>File Size : {fileSize} KB</p>
+
+     <lightning-input class="slds-p-aroung_medium" label="Rename File" onchange ={handleRename} value={renamedFileName}></lightning-input>
+   <lightning-button class="slds-p-aroung_medium" variant="brand" label="Upload to Account" onclick={handleUpload}></lightning-button>
+</template>
+<template if:true={uploadStatus}>
+ <p class="slds-m-top_medium slds-text-color_sucess">{uploadStatus}</p>
+</template>
+<template if:true={error}>
+   <p class="slds-m-top_medium slds-text-color_error">{error}</p>
+</template>
+    
+    </lightning-card>
+</template>

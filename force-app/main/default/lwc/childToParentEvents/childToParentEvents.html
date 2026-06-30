@@ -1,0 +1,8 @@
+<template>
+    <lightning-card title="Parent Componant">
+        <template if:true={eventReceived}>
+       received this value from child={showFinalValue.id} {showFinalValue.name}
+       </template>
+       <c-child-to-trigger-event onsendproduct={handleProductSelection}></c-child-to-trigger-event> 
+    </lightning-card>
+</template>

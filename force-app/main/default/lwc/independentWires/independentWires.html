@@ -1,0 +1,31 @@
+<template>
+     <template if:true={showCases}> 
+    <lightning-card class="slds-m-around_small" title="Case Records">
+      
+     <template for:each={caseList} for:item="caseRec">
+      <div class="slds-m-around_small" key={caseRec.Id}>
+        <p><b>{caseRec.Id}</b></p>
+      <p> Subject:{caseRec.Subject} </p>
+      <p> Origin: {caseRec.Origin}</p>
+      <p> Priority:{caseRec.Priority}</p>
+      </div>
+      </template>
+
+    </lightning-card>
+     </template>
+     
+      <template if:true={showTasks}>
+    <lightning-card class="slds-m-around_small" title="Task Records">
+    <template for:each={taskList} for:item="taskRec">
+      <div class="slds-m-around_small" key={taskRec.Id}>
+        <p><b>{taskRec.Id}</b></p>
+      <p> Subject:{taskRec.Subject}</p>
+       <p> Description:{taskRec.Description}</p>
+       <p> Activity Date:{taskRec.ActivityDate}</p>
+      </div>
+     </template>
+   
+    </lightning-card>
+      </template>
+    
+</template>

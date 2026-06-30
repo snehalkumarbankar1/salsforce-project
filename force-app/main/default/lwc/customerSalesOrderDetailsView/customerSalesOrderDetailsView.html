@@ -1,0 +1,43 @@
+<template>
+       <lightning-card title="Customer Information" >
+        <lightning-button label="View Sales Order" slot="actions" onclick={getSalesOrders}></lightning-button>
+
+         <lightning-layout >
+         <lightning-layout-item size="2"> Name:  </lightning-layout-item>
+          
+         <lightning-layout-item size="2">{customerData.Name} </lightning-layout-item>
+        
+         <lightning-layout-item size="2"> Email: </lightning-layout-item>
+         
+         <lightning-layout-item size="2">{customerData.Email__c}</lightning-layout-item>
+         </lightning-layout>
+
+         <lightning-layout>
+         <lightning-layout-item size="2">Phone: </lightning-layout-item>
+         
+         <lightning-layout-item size="2"> {customerData.Primary_Phone__c}</lightning-layout-item>
+         
+         <lightning-layout-item size="2"> Address: </lightning-layout-item>
+         
+         <lightning-layout-item size="2"> {customerData.Address__c}</lightning-layout-item>
+         </lightning-layout>
+
+       </lightning-card>
+       <template if:true={displayData}>
+       <lightning-card title="Sales Order Details">
+       <template if:true={displayMessage}>
+        <div style="color:grey; font-weight: bold;">
+        Info: No Sales Records Found with this customer 
+        </div>
+       </template>
+       <template if:true={salesOrdersData}>
+              <lightning-datatable key-field="Id"
+                                   data={salesOrdersData}
+                                   columns={columns} 
+                                   hide-checkbox-column=""
+                                   onrowaction={handleRowAction}>
+              </lightning-datatable>
+       </template>
+       </lightning-card>
+       </template>
+</template>
